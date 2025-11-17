@@ -15,4 +15,3 @@ def is_safe(board, row, col, n):
         if board[i][j] == 1:
             return False
     return True
-
