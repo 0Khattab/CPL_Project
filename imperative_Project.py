@@ -17,10 +17,6 @@ def solve_col(board, col):
 
 
 def solve_n_queen(n):
-    if n <= 0:
-        print("Please enter a positive integer N greater than 0.")
-        return
-    
     board = create_board(n)
 
     if not solve_col(board, 0):
@@ -29,5 +25,12 @@ def solve_n_queen(n):
 
     visualize_board(board)
 
-n= int(input("Enter the value of N for N-Queen problem: "))
+while True:
+    n = int(input("Enter the value of N for N-Queen problem: "))
+    if n <= 0:
+        print("Please enter a positive integer N greater than 0.")
+    
+    if n > 0:
+        break
+
 solve_n_queen(n)
