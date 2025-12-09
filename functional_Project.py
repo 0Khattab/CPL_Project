@@ -104,28 +104,35 @@ def print_board(board, r=0):
     print(print_row(board[r]))
     print_board(board, r + 1)
 # ----------------------------------------------------- #
-
-
-if __name__ == "__main__":
-    while True:
-        print("1. Solve n-queen")
-        print("2. Exit")
-        ch = int(input("Please enter your choice: "))
-        if ch == 1:
-            while True:
-                n = int(input("Please Enter Number of Queens: "))
-                if n <= 0:
-                    print("Please enter a positive integer")
-                    continue
-                else:
-                    success, board = solve_nqueen(n)
-                    if success:
-                        print_board(board)
-                    else:
-                        print("No solution.")
-                    break
-        elif ch == 2:
-            break
+def Prog ():
+    n = int(input("Please Enter Number of Queens: "))
+    if n <= 0:
+        print("Please enter a positive integer")
+        Prog()
+    else:
+        success, board = solve_nqueen(n)
+        if success:
+            print_board(board)
+            print("\n//////////////////\n")
         else:
-            print("Please enter a valid choice.")
-            continue
+            print("No solution.")
+            print("\n//////////////////\n")
+        return
+
+def Main ():
+    print("1. Solve n-queen")
+    print("2. Exit")
+    ch = int(input("Please enter your choice: "))
+    if ch == 1:
+        Prog()
+        Main()
+    elif ch == 2:
+        return
+    else:
+        print("Please enter a valid choice.")
+        print("\n//////////////////\n")
+# ----------------------------------------------------- #
+
+        
+#------------Main fun-----------------#
+Main()
