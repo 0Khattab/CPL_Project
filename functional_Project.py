@@ -113,10 +113,8 @@ def Prog ():
         success, board = solve_nqueen(n)
         if success:
             print_board(board)
-            print("\n//////////////////\n")
         else:
             print("No solution.")
-            print("\n//////////////////\n")
         return
 
 def Main ():
@@ -125,12 +123,13 @@ def Main ():
     ch = int(input("Please enter your choice: "))
     if ch == 1:
         Prog()
+        print("\n//////////////////////\n")
         Main()
     elif ch == 2:
         return
     else:
         print("Please enter a valid choice.")
-        print("\n//////////////////\n")
+        print("\n//////////////////////\n")
 # ----------------------------------------------------- #
 
         
