@@ -28,7 +28,7 @@ def is_safe(board, row, col, n):
             return False
     return True
     
-def solve_col(board, col):
+def solve_col(board, col  , is_safe):
     n = len(board)
     if col >= n:
         return True
