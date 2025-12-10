@@ -43,7 +43,7 @@ def solve_col(board, col  , is_safe):
 
 def solve_n_queen(n):
     board = create_board(n)
-    if not solve_col(board, 0):
+    if not solve_col(board, 0, is_safe):
         print(f"No solution exists for N ={n}")
         return
     visualize_board(board)
