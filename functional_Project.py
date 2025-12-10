@@ -89,7 +89,7 @@ def solve_nqueen(n):
     return success, final_board
 # --------------------------------------------------- #
 
-# --------------- Visuallization ---------------- #
+# --------------- Visualization ---------------- #
 def print_row(row, c=0):
     if c == len(row):
         return ""
