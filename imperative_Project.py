@@ -1,6 +1,6 @@
-
 def create_board(n):
     return [[0 for i in range(n)] for i in range(n)]
+
 
 def visualize_board(board):
     for i in range(n):
@@ -14,28 +14,29 @@ def is_safe(board, row, col, n):
     for i in range(n):
         if board[i][col] == 1:
             return False
-    
+
     for j in range(n):
         if board[row][j] == 1:
             return False
-    
-    for i, j in zip(range(row-1, -1, -1), range(col-1, -1, -1)):
+
+    for i, j in zip(range(row - 1, -1, -1), range(col - 1, -1, -1)):
         if board[i][j] == 1:
             return False
-    
-    for i, j in zip(range(row+1, n), range(col-1, -1, -1)):
+
+    for i, j in zip(range(row + 1, n), range(col - 1, -1, -1)):
         if board[i][j] == 1:
             return False
     return True
-    
-def solve_col(board, col  , is_safe):
+
+
+def solve_col(board, col , is_safe):
     n = len(board)
     if col >= n:
         return True
     for row in range(n):
-        if is_safe(board, row, col,n):
+        if is_safe(board, row, col, n):
             board[row][col] = 1
-            if solve_col(board, col + 1):
+            if solve_col(board, col + 1 , is_safe):
                 return True
             board[row][col] = 0
     return False
@@ -47,6 +48,7 @@ def solve_n_queen(n):
         print(f"No solution exists for N ={n}")
         return
     visualize_board(board)
+
 
 while True:
     print("1. solve N queen")
